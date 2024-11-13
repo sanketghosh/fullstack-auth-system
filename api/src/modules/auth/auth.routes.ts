@@ -1,5 +1,11 @@
 import express from "express";
 
-const router = express.Router();
+// controllers
+import { registerHandler } from "@/modules/auth/auth.controllers";
 
-export default router;
+const authRouter = express.Router();
+
+// register
+authRouter.post("/auth/register", registerHandler);
+
+export default authRouter;
